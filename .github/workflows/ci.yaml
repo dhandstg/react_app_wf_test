@@ -18,6 +18,13 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "12.x"
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+         path: ~/.npm
+         key: ${{runner.os}}_nodekey_{{hashFiles('**/package-lock.json')}}
+         restore-key: |
+           ${{runner.os}}_nodekey_
       - name: Install dependencies!!
         run: npm ci
       - name: Check formatting

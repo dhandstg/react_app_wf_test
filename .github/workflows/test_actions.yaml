@@ -7,9 +7,14 @@ jobs:
     steps:
       - name: Check out repo
         uses: actions/checkout@v2
-      - name: Run private action
-        id: hello_action
-        uses: ./.github/actions/hello
+      #- name: Run private action
+      #  id: hello_action
+      #  uses: ./.github/actions/hello
+      #  with:
+      #    whom-to-greet: "Deee"
+      - name: Run private docker action
+        id: hello_action_docker
+        uses: ./.github/actions/hello-docker
         with:
           whom-to-greet: "Deee"
       - name: Show time

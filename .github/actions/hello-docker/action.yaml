@@ -1,0 +1,17 @@
+name: Hello World
+author: De
+description: Just a hello world action
+inputs: 
+  whom-to-greet: 
+    description: "Whom to greet"
+    required: true
+    default: De
+outputs:
+  time:
+    description: "Time when the greeting takes place"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  #entrypoint:
+  args: 
+    - $ {{inputs.whom-to-greet}}

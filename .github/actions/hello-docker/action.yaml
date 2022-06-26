@@ -12,6 +12,5 @@ outputs:
 runs:
   using: "docker"
   image: "Dockerfile"
-  #entrypoint:
   args: 
-    - $ {{inputs.whom-to-greet}}
+    - ${{inputs.whom-to-greet}}

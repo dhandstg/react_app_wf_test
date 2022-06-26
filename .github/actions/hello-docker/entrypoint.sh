@@ -6,8 +6,8 @@ echo "::error ::This is an error message"
 
 echo "::add-mask::$1"
 
-time = $(date)
-echo "::set-output name=time::$time"
+time=$(date)
+echo "::set-output name=time:: $time"
 
 echo "::group::Expandable logs with 8 lines"
 for num in 1 2 3 4 5 6 7 8

@@ -17,6 +17,8 @@ jobs:
   create_issue:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out repo
+        uses: actions/checkout@v2
       - name: create issue
         id: issue_opener
         uses: ./.github/actions/issue_opener

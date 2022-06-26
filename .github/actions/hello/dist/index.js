@@ -884,7 +884,7 @@ const github = __webpack_require__(469);
 
 try
 {
-    const name = core.getInput('who-to-greet');
+    const name = core.getInput('whom-to-greet');
     console.log(`Hello, ${name}`);
     const time = new Date();
     core.setOutput("time", time.toTimeString);

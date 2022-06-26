@@ -9,6 +9,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      SURGE_LOGIN: ${{secrets.SURGE_LOGIN}}
+      SURGE_TOKEN: ${{secrets.SURGE_TOKEN}}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -60,11 +63,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Deploy to staging server
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' github.ref == 'refs/heads/develop'
         run: npx surge --project ./build --domain pastoral-farmer.surge.sh
-        env:
-          SURGE_LOGIN: ${{secrets.SURGE_LOGIN}}
-          SURGE_TOKEN: ${{secrets.SURGE_TOKEN}}
+      - name: Deploy to production server
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        run: npx surge --project ./build --domain pastoral-farmer.surge.sh
+        
 
         
       

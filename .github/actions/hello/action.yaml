@@ -11,4 +11,4 @@ outputs:
     description: "Time when the greeting takes place"
 runs:
   using: "node12"
-  main: "index.js"
+  main: "dist/index.js"

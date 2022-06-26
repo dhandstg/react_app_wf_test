@@ -24,8 +24,8 @@ jobs:
         uses: ./.github/actions/issue_opener
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          title: A title
-          body: A body
+          title: A new title
+          body: A significant body
           assignees: |
             dhandstg
             andrehdutra

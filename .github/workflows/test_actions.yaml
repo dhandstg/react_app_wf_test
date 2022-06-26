@@ -18,7 +18,7 @@ jobs:
         with:
           whom-to-greet: "Deee"
       - name: Show time
-        run: echo "Time when run ${{steps.hello_action.outputs.time}}"
+        run: echo "Time when run ${{steps.hello_action_docker.outputs.time}}"
   create_issue:
     runs-on: ubuntu-latest
     steps:

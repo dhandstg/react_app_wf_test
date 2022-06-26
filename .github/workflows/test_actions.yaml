@@ -14,3 +14,19 @@ jobs:
           whom-to-greet: "Deee"
       - name: Show time
         run: echo "Time when run ${{steps.hello_action.outputs.time}}"
+  create_issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: create issue
+        id: issue_opener
+        uses: ./.github/actions/issue_opener
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: A title
+          body: A body
+          assignees: |
+            dhandstg
+            andrehdutra
+      - name: show opened issue
+        run: |
+          echo ${{steps.issue_opener.outputs.issue}}

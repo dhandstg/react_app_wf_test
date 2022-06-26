@@ -1,0 +1,22 @@
+name: Issue opener
+author: De
+description: Will open an issue in GitHub
+inputs: 
+  token: 
+    description: "GitHub Token"
+    required: true
+  title: 
+    description: "Issue title"
+    required: true
+  body: 
+    description: "Issue description"
+    required: false
+  assignees: 
+    description: "Assignees"
+    required: false
+outputs:
+  issue:
+    description: "The issue object as a string"
+runs:
+  using: "node12"
+  main: "dist/index.js"

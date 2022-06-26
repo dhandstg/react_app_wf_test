@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@actions/core": "^1.9.0",
-    "@actions/github": "^5.0.3",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -47,6 +45,8 @@
     ]
   },
   "devDependencies": {
+    "@actions/core": "^1.9.0",
+    "@actions/github": "^5.0.3",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
     "cz-conventional-changelog": "^3.3.0",

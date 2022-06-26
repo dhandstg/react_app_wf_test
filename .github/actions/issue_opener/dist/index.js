@@ -1870,7 +1870,7 @@ try
 // https://github.com/octokit/core.js#readme
     
     const octokit = new github.getOctokit(githubToken);
-    response = none;
+    response = null;
     send_post(octokit, github, title, body, assignees).then(resp => response = resp);
     core.setOutput('issue', JSON.stringify(response.data));
 }

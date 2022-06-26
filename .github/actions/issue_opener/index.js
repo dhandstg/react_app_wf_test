@@ -32,11 +32,12 @@ catch (error) {
 
 async function send_post(octokitObj, githubObj, title, body, assignees)
 {
-    await octokitObj.request(`POST /repos/${githubObj.context.repo.owner}/${githubObj.context.repo.repo}/issues`, {
+    response = await octokitObj.request(`POST /repos/${githubObj.context.repo.owner}/${githubObj.context.repo.repo}/issues`, {
         owner: `${githubObj.context.repo.owner}`,
         repo: `${githubObj.context.repo.repo}`,
         title: `${title}`,
         body: `${body}`,
         assignees: assignees ? assignees.split('\n') : undefined
     })
+    return response;
 }

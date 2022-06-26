@@ -1871,7 +1871,7 @@ try
     
     const octokit = new github.getOctokit(githubToken);
     response = null;
-    send_post(octokit, github, title, body, assignees).then(resp => core.setOutput('issue', JSON.stringify(resp.data)));
+    send_post(octokit, github, title, body, assignees).then(resp => core.setOutput('issue', JSON.stringify(resp.data))).catch(e => console.log(e));
     
 }
 catch (error) {
